@@ -1,0 +1,18 @@
+--- /usr/share/pocketsphinx/model/lm/en_US/cmu07a.dic	2013-02-19 12:18:24.000000000 +0000
++++ etc/voxforge_en_sphinx.dic	2013-02-21 10:02:49.584010001 +0000
+@@ -54648,6 +54648,7 @@
+ hikers	HH AY K ER Z
+ hikes	HH AY K S
+ hiking	HH AY K IH NG
++hilaire	HH IH L EY R
+ hiland	HH IH L AH N D
+ hilaria	HH IY L AA R IY AH
+ hilario	HH IY L AA R IY OW
+@@ -87902,6 +87903,7 @@
+ pagliuca's	P AE G L IY UW K AH Z
+ pagni	P AE G N IY
+ pagnotta	P AA G N OW T AH
++pago	P AA G OW
+ pagoda	P AH G OW D AH
+ pagoda's	P AH G OW D AH Z
+ pagodas	P AH G OW D AH Z
