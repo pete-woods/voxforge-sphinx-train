@@ -31,6 +31,7 @@ setup(name='voxforgesphinx',
       author_email='pete.woods@canonical.com',
       scripts=['bin/voxforge-sphinx'],
       packages=['voxforgesphinx', 'tests'],
+      package_data={'voxforgesphinx': ['template.*', '*.patch']},
       url='http://launchpad.net/voxforge-sphinx-train',
       long_description=read('README'),
       test_suite='tests'
