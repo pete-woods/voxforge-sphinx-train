@@ -214,7 +214,7 @@ class Train(object):
         
         with open(self.train_config, 'w') as f:    
             for line in config:
-                line = line.replace("$CFG_HMM_TYPE = '.cont.'", "$CFG_HMM_TYPE = '.semi.'"); # changed this
+                #line = line.replace("$CFG_HMM_TYPE = '.cont.'", "$CFG_HMM_TYPE = '.semi.'"); # uncomment to train a semi-continuous model
                 line = line.replace("$CFG_VECTOR_LENGTH = 13;", '''$CFG_VECTOR_LENGTH = 13;
 $CFG_FEAT_WINDOW = 0;
 ''')
@@ -223,11 +223,11 @@ $CFG_FEAT_WINDOW = 0;
 # unknown words (English, 40-phone specific)
 $CFG_LTSOOV = 'no';
 ''')
-                line = line.replace("$CFG_FINAL_NUM_DENSITIES = 8", "$CFG_FINAL_NUM_DENSITIES = 32") # consider using 32 (was 16)
+                line = line.replace("$CFG_FINAL_NUM_DENSITIES = 8", "$CFG_FINAL_NUM_DENSITIES = 32")
                 line = line.replace("$CFG_N_TIED_STATES = 200", "$CFG_N_TIED_STATES = 3000")
                 line = line.replace("$CFG_NPART = 1", "$CFG_NPART = 20")
                 line = line.replace("$CFG_NPART = 1", "$CFG_NPART = 20")
-                #line = line.replace("$CFG_LDA_MLLT = 'no'", "$CFG_LDA_MLLT = 'yes'") # changed this
+                line = line.replace("$CFG_LDA_MLLT = 'no'", "$CFG_LDA_MLLT = 'yes'")
                 line = line.replace("$CFG_CONVERGENCE_RATIO = 0.1", "$CFG_CONVERGENCE_RATIO = 0.01")
                 line = line.replace('$CFG_QUEUE_TYPE = "Queue"', '$CFG_QUEUE_TYPE = "Queue::POSIX"')
                 line = line.replace('$CFG_MAKE_QUESTS = "yes"', '$CFG_MAKE_QUESTS = "no"')
