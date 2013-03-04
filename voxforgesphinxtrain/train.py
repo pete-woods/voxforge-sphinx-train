@@ -192,13 +192,13 @@ class Train(object):
 
     def templates(self):
         with open(self.filler, 'w') as f:
-            f.write(pkgutil.get_data("voxforgesphinx", "template.filler"));
+            f.write(pkgutil.get_data("voxforgesphinxtrain", "template.filler"));
         with open(self.phone, 'w') as f:
-            f.write(pkgutil.get_data("voxforgesphinx", "template.phone"));
+            f.write(pkgutil.get_data("voxforgesphinxtrain", "template.phone"));
         with open(self.tree_questions, 'w') as f:
-            f.write(pkgutil.get_data("voxforgesphinx", "template.tree_questions"));
+            f.write(pkgutil.get_data("voxforgesphinxtrain", "template.tree_questions"));
         shutil.copyfile(self.installed_dictionary, self.dictionary)
-        subprocess.check_call(["patch", self.dictionary, join(os.path.dirname(sys.modules["voxforgesphinx"].__file__), "dic.patch")])
+        subprocess.check_call(["patch", self.dictionary, join(os.path.dirname(sys.modules["voxforgesphinxtrain"].__file__), "dic.patch")])
         
 
     def setup(self):

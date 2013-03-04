@@ -1,12 +1,15 @@
-Source: voxforgesphinx
+Source: voxforgesphinxtrain
 Maintainer: Pete Woods <pete.woods@canonical.com>
 Section: python
 Priority: optional
 Build-Depends: python-setuptools (>= 0.6b3), python-all (>= 2.6.6-3), debhelper (>= 7.4.3)
-Standards-Version: 3.9.1
+Standards-Version: 3.9.3
 
-Package: python-voxforgesphinx
+Package: python-voxforgesphinxtrain
 Architecture: all
-Depends: ${misc:Depends}, ${python:Depends}
+Depends: ${misc:Depends}, ${python:Depends}, flac, wget,
+ irstlm, sphinxtrain, sphinxbase
 Description: Voxforge Sphinx training scripts
-
+ This package contain a simple Python based tool for setting
+ up the training of sphinx acoustic models against the
+ English Voxforge corpus.

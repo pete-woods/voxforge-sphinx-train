@@ -23,15 +23,15 @@ from setuptools import setup
 def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
-setup(name='voxforgesphinx',
+setup(name='voxforgesphinxtrain',
       version='1.0',
       description='Voxforge Sphinx training scripts',
       license='GNU GPL v3',
       author='Pete Woods',
       author_email='pete.woods@canonical.com',
-      scripts=['bin/voxforge-sphinx'],
-      packages=['voxforgesphinx', 'tests'],
-      package_data={'voxforgesphinx': ['template.*', '*.patch']},
+      scripts=['bin/voxforge-sphinx-train'],
+      packages=['voxforgesphinxtrain', 'tests'],
+      package_data={'voxforgesphinxtrain': ['template.*', '*.patch']},
       url='http://launchpad.net/voxforge-sphinx-train',
       long_description=read('README'),
       test_suite='tests'
