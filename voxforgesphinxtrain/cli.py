@@ -1,4 +1,4 @@
-# Copyright (C) 2005-2012 Canonical Ltd
+# Copyright (C) 2013 Canonical Ltd
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -13,15 +13,6 @@
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
-
-'''
-hudkeywords.cli -- shortdesc
-
-hudkeywords.cli is a description
-
-It defines classes_and_methods
-
-'''
 
 import sys
 import os
@@ -51,7 +42,7 @@ def main(argv=None): # IGNORE:C0111
     program_name = os.path.basename(sys.argv[0])
     program_version = "v%s" % __version__
     program_version_message = '%%(prog)s %s' % (program_version)
-    program_shortdesc = 'Simple python tool for creating po and keyword XML files for HUD.'
+    program_shortdesc = 'Simple python tool for running sphinxtrain against the English Voxforge corpus.'
 
     try:
         # Setup argument parser
@@ -72,13 +63,9 @@ def main(argv=None): # IGNORE:C0111
             print("Running command [{}]".format(args.command))
         
         if args.command == "all":
-            t.clean()
-            t.convert_flac()
-            t.link_mfc()
-            t.transcript()
-            t.build_lm()
-            t.templates()
-            t.setup()
+            t.do_all()
+        elif args.command == "configure":
+            t.configure()
         elif args.command == "download":
             t.download()
         elif args.command == "unpack":
@@ -111,8 +98,8 @@ def main(argv=None): # IGNORE:C0111
         sys.stderr.write(program_name + ": " + e.msg + "\n")
         sys.stderr.write(indent + "  for help use --help\n")
         return 2
-#    except Exception, e:
-#        indent = len(program_name) * " "
-#        sys.stderr.write(program_name + ": " + repr(e) + "\n")
-#        sys.stderr.write(indent + "  for help use --help\n")
-#        return 2
+    except Exception, e:
+        indent = len(program_name) * " "
+        sys.stderr.write(program_name + ": " + repr(e) + "\n")
+        sys.stderr.write(indent + "  for help use --help\n")
+        return 2

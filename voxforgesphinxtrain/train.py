@@ -1,4 +1,4 @@
-# Copyright (C) 2005-2012 Canonical Ltd
+# Copyright (C) 2013 Canonical Ltd
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -269,3 +269,18 @@ else {
         shutil.rmtree(join(self.basedir, "result"), ignore_errors=True)
         shutil.rmtree(join(self.basedir, "trees"), ignore_errors=True)
         rm_f(join(self.basedir, "voxforge_en_sphinx.html"))
+
+	def configure(self):
+	    self.unpack()
+        self.convert_flac()
+        self.link_mfc()
+        self.transcript()
+        self.build_lm()
+        self.templates()
+        self.setup()
+
+	def do_all(self):
+		self.clean()
+        self.configure()
+        self.run()
+
