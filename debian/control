@@ -8,7 +8,7 @@ Standards-Version: 3.9.3
 Package: python-voxforgesphinxtrain
 Architecture: all
 Depends: ${misc:Depends}, ${python:Depends}, flac, wget,
- irstlm, sphinxtrain, sphinxbase
+ irstlm, sphinxtrain, sphinxbase-utils
 Description: Voxforge Sphinx training scripts
  This package contain a simple Python based tool for setting
  up the training of sphinx acoustic models against the
